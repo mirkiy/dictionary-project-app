@@ -9,7 +9,18 @@ function App() {
         <main>
           <Dictionary />
         </main>
-        <footer className="App-footer">Coded by Mirka Zacharova</footer>
+        <footer className="App-footer">
+          <small>
+            <a
+              href="https://github.com/mirkiy/dictionary-project-app"
+              target="_blank "
+              rel="noreferrer"
+            >
+              Open-source code
+            </a>
+            , by Mirka Zacharova
+          </small>
+        </footer>
       </div>
     </div>
   );
