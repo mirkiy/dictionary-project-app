@@ -16,14 +16,17 @@ a {
 }
 .App-footer {
   text-align: center;
-  margin: 30px 0;
-  color: #f5bc61;
+  margin: 30px auto;
+  color: #212529;
+  background-color: #f3f1f7;
+  width: 300px;
   font-weight: bold;
 }
 .App-footer a {
-  color: #f5bc61;
+  color: #212529;
+  text-decoration: none;
   transition: all 150ms ease-in-out;
 }
 .App-footer a:hover {
-  color: white;
+  color: #bd9945;
 }
