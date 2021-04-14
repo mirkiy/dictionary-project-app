@@ -1,7 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Indie+Flower&display=swap");
+
+body {
+  background-image: url("./newspaper.jpg");
+}
+a {
+  color: #8d808c;
+}
+.App {
+  margin: auto;
+  width: 50%;
+  font-family: "Gloria Hallelujah", cursive;
+}
 .App-header {
   margin: 30px 0;
 }
 .App-footer {
   text-align: center;
   margin: 30px 0;
+  color: #f5bc61;
+  font-weight: bold;
+}
+.App-footer a {
+  color: #f5bc61;
+  transition: all 150ms ease-in-out;
+}
+.App-footer a:hover {
+  color: white;
 }
