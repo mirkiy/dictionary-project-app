@@ -9,6 +9,7 @@ export default function Dictionary(props) {
   let [results, setResults] = useState(null);
   let [loaded, setLoaded] = useState(false);
   let [photos, setPhotos] = useState(null);
+  let [errors, setErrors] = useState([]);
 
   function handleDictionaryResponse(response) {
     setResults(response.data[0]);
@@ -21,7 +22,8 @@ export default function Dictionary(props) {
   function search() {
     //documentation: https://dictionaryapi.dev/
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
-    axios.get(apiUrl).then(handleDictionaryResponse);
+    // axios.get(apiUrl).then(handleDictionaryResponse);
+    axios.get(apiUrl).then(handleDictionaryResponse).catch(renderTheMessage);
 
     let pixabayApiKey = `21192164-738ba10232f68fdf8ebafce23`;
     let pixabayApiUrl = `https://pixabay.com/api/?key=${pixabayApiKey}&q=${keyword}&image_type=photo&per_page=9`;
@@ -40,6 +42,10 @@ export default function Dictionary(props) {
     setLoaded(true);
     search();
   }
+  function renderTheMessage(error) {
+    console.log(error.response.data.title);
+    setErrors(error.response.data.title);
+  }
 
   if (loaded) {
     return (
@@ -52,6 +58,7 @@ export default function Dictionary(props) {
               onChange={handleKeywordChange}
               defaultValue={props.defaultKeyword}
             />
+            {errors && <h5>{errors}</h5>}
           </form>
           <div className="hint">suggested words: sunset, forest, flower...</div>
         </section>
@@ -61,6 +68,6 @@ export default function Dictionary(props) {
     );
   } else {
     load();
-    return "Loading ...";
+    return "Loading...";
   }
 }
