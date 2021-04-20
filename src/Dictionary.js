@@ -42,9 +42,11 @@ export default function Dictionary(props) {
     setLoaded(true);
     search();
   }
+
   function renderTheMessage(error) {
     console.log(error.response.data.title);
     setErrors(error.response.data.title);
+    setResults(null);
   }
 
   if (loaded) {
@@ -58,7 +60,8 @@ export default function Dictionary(props) {
               onChange={handleKeywordChange}
               defaultValue={props.defaultKeyword}
             />
-            {errors && <h5>{errors}</h5>}
+            {errors}
+            {/* {errors && <h5>{errors}</h5>} */}
           </form>
           <div className="hint">suggested words: sunset, forest, flower...</div>
         </section>
