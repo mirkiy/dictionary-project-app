@@ -11,8 +11,13 @@ export default function Dictionary(props) {
   let [photos, setPhotos] = useState(null);
   let [errors, setErrors] = useState([]);
 
+  //   function handleDictionaryResponse(response) {
+  //     setResults(response.data[0]);
+  //   }
+
   function handleDictionaryResponse(response) {
     setResults(response.data[0]);
+    setErrors([]);
   }
 
   function handlePixabayResponse(response) {
@@ -61,7 +66,6 @@ export default function Dictionary(props) {
               defaultValue={props.defaultKeyword}
             />
             {errors}
-            {/* {errors && <h5>{errors}</h5>} */}
           </form>
           <div className="hint">suggested words: sunset, forest, flower...</div>
         </section>
