@@ -5,9 +5,8 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <header className="App-header"></header>
         <main>
-          <Dictionary defaultKeyword="sunrise" />
+          <Dictionary defaultKeyword="sun" />
         </main>
         <footer className="App-footer">
           <small>
@@ -16,9 +15,16 @@ function App() {
               target="_blank "
               rel="noreferrer"
             >
-              Open-source code
+              Open-source code -
+            </a>{" "}
+            <a
+              href="https://www.linkedin.com/in/miroslava-zacharova/"
+              target="_"
+              rel="noreferrer"
+            >
+              {" "}
+              by Mirka Zacharova
             </a>
-            , by Mirka Zacharova
           </small>
         </footer>
       </div>

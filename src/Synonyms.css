@@ -1,6 +1,6 @@
 .Synonyms {
-  margin: 20px 0 0;
-  padding: 0 0 30px;
+  padding: 0;
+  margin: 15px 0;
 }
 
 .Synonyms li {
@@ -8,4 +8,7 @@
   display: inline-block;
   padding-right: 20px;
   line-height: 1;
+}
+.synonyms-heading {
+  margin-top: 20px;
 }
